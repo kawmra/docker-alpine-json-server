@@ -5,4 +5,4 @@ RUN apk --no-cache add nodejs nodejs-npm && \
 
 EXPOSE 3000
 
-CMD ["json-server", "--watch", "/data/db.json", "--routes", "/data/routes.json"]
+CMD ["json-server", "/data/db.json", "--routes", "/data/routes.json"]
