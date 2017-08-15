@@ -43,6 +43,6 @@ Specify `-v` to remove volumes as well.
 # Change the data and routes
 
 To apply the changed data to the server:
-1. `$ docker-compose down --volumes` to down the containers and volumes.
+1. `$ docker-compose down -v` to down the containers and volumes.
 2. `$ docker-compose build` to rebuild the images.
-3. `$ docker-compose up` to up the containers and volumes.
+3. `$ docker-compose up -d` to up the containers and volumes.
