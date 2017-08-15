@@ -1,0 +1,27 @@
+version: '3.2'
+services:
+  json-server-data:
+    build: ./data
+    image: kawmra/json-server-data:latest
+    volumes:
+      - type: volume
+        source: json-server-data
+        target: /data
+        read_only: true
+
+  json-server:
+    build: ./server
+    image: kawmra/json-server:latest
+    volumes:
+      - type: volume
+        source: json-server-data
+        target: /data
+        read_only: true
+    depends_on:
+      - "json-server-data"
+    ports:
+      - 3000:3000
+
+volumes:
+  json-server-data:
+    driver: local
